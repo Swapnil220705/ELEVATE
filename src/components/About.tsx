@@ -34,8 +34,8 @@ const About: React.FC = () => {
   ];
 
   const leadership = [
-    { name: "Ayush Kathal", role: "Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", bio: "Leading the club with passion for innovation", linkedin: "https://www.linkedin.com/in/ayushkathal2005?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "https://share.google/ajRrDL8R807nrJLfJ", instagram:"https://www.instagram.com/_ayush_kathal_?igsh=MWxueWVyMjUwdmlmMA==" },
-    { name: "Swapnil Jain", role: "Co-Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", bio: "Guiding technical excellence and mentorship", linkedin: "https://www.linkedin.com/in/swapnil-jain-71ab66295/", github: "https://github.com/Swapnil220705", instagram: "https://www.instagram.com/_.swapnil_jain?igsh=MWhjNTdsZ283MTB1aQ==" }
+    { name: "Ayush Kathal", role: "Lead", image: "/images/team/ayush_kathal.jpg", bio: "Leading the club with passion for innovation", linkedin: "https://www.linkedin.com/in/ayushkathal2005", github: "https://share.google/ajRrDL8R807nrJLfJ", instagram:"https://www.instagram.com/_ayush_kathal_?igsh=MWxueWVyMjUwdmlmMA==" },
+    { name: "Swapnil Jain", role: "Co-Lead", image: "/images/team/swapnil_jain.jpg", bio: "Guiding technical excellence and mentorship", linkedin: "https://www.linkedin.com/in/swapnil-jain-71ab66295/", github: "https://github.com/Swapnil220705", instagram: "https://www.instagram.com/_.swapnil_jain?igsh=MWhjNTdsZ283MTB1aQ==" }
   ];
 
   const teamNames = ["Tech", "Creatives", "Marketing", "Corporate","Management"];
@@ -43,37 +43,37 @@ const About: React.FC = () => {
 
   const teams = {
     Tech: [
-      { name: "Arnab Mistry", role: "Web-Dev Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Kunal Belwalkar", role: "App-Dev Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Ojaswi Joshi", role: "Open-Source Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Abhist Kamle", role: "Web-3 Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Samarth Bhandegaonkar", role: "AI/ML Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
+      { name: "Arnab Mistry", role: "Web-Dev Lead", image: "/images/team/arnab_mistry.jpg", linkedin:"https://www.linkedin.com/in/arnabmistry", github:"https://github.com/ArnabMistry", instagram:"https://www.instagram.com/beolzss"},
+      { name: "Kunal Belwalkar", role: "App-Dev Lead", image: "/images/team/kunal_belwalkar.jpg", linkedin:"https://www.linkedin.com/in/kunal-belwalkar-a048342ab", github:"#", instagram:"https://www.instagram.com/_kunal_belwalkar_/"},
+      { name: "Ojaswi Joshi", role: "Open-Source Lead", image: "/images/team/ojaswi_joshi.jpg", linkedin:"https://www.linkedin.com/in/ojaswi-joshi-2ba993326", github:"https://github.com/OjaswiJoshi13", instagram:"https://www.instagram.com/w._.ojaswi"},
+      { name: "Abhist Kamle", role: "Web-3 Lead", image: "/images/team/abhist_kamle.jpg", linkedin:"http://www.linkedin.com/in/abhist-kamle-845079323", github:"https://github.com/Abhist17", instagram:"https://www.instagram.com/_abhist._"},
+      { name: "Samarth Bhandegaonkar", role: "AI/ML Lead", image: "/images/team/samarth_bhandegaonkar.jpg", linkedin:"https://www.linkedin.com/in/samarth-bhandegaonkar-aba116317", github:"https://github.com/Samarth101", instagram:"https://www.instagram.com/__sam__01/"},
       { name: "Suraj Shewale", role: "Web-Dev", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Arnav Timble", role: "Web-Dev", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Raveena Basarimarad", role: "AI/ML", image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"}
+      { name: "Arnav Timble", role: "Web-Dev", image: "/images/team/arnav_timble.jpg", linkedin:"http://www.linkedin.com/in/arnav-timble", github:"https://github.com/Arnz18", instagram:"https://www.instagram.com/lil_arnz/"},
+      { name: "Raveena Basarimarad", role: "AI/ML", image: "/images/team/raveena_basarimarad.jpg", linkedin:"https://www.linkedin.com/in/raveena-basarimarad-265190303", github:"https://github.com/raveena2309", instagram:"https://www.instagram.com/raveena_b23/"}
     ],
     Creatives: [
-      { name: "Varad Chopade", role: "Design Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Rutva Gandhi", role: "Social-Media Lead", image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"}    
+      { name: "Varad Chopade", role: "Design Lead", image: "/images/team/varad_chopade.jpg", linkedin:"https://www.linkedin.com/in/varad-chopade-4b7959337", github:"https://github.com/varad016", instagram:"https://www.instagram.com/varad_16_"},
+      { name: "Rutva Gandhi", role: "Social-Media Lead", image: "/images/team/rutva_gandhi.jpg", linkedin:"https://www.linkedin.com/in/rutva-gandhi-243524327", github:"https://github.com/RutvaGandhi07", instagram:"http://instagram.com/rutvaa0_"}    
     ],
     Marketing: [
-      { name: "Manu Shrivastava", role: "Marketing Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Sohan Ganji", role: "Marketing Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"}
+      { name: "Manu Shrivastava", role: "Marketing Lead", image: "/images/team/manu_shrivastava.jpg", linkedin:"https://www.linkedin.com/in/manu-shrivastava-190a22217", github:"https://github.com/mshricreation", instagram:"#https://www.instagram.com/_manu.shriiva"},
+      { name: "Sohan Ganji", role: "Marketing Lead", image: "/images/team/sohan_ganji.jpg", linkedin:"https://www.linkedin.com/in/sohan-ganji-ab8944375", github:"https://share.google/5w6Z4RbH3RfEDxQWm", instagram:"https://www.instagram.com/sohanganji_"}
     
     ],
     Corporate: [
-      { name: "Shreyam Prashar", role: "Corporate Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"}
+      { name: "Shreyam Prashar", role: "Corporate Lead", image: "/images/team/shreyam_prashar.jpg", linkedin:"https://www.linkedin.com/in/shreyam-prashar-b066bb2a8", github:"#", instagram:"#"}
     ],
     Management: [
-      { name: "Harshal Mestri", role: "EM Lead", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Nakul Maheshwari", role: "EM", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"},
-      { name: "Vaidehi Turkar", role: "EM", image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400", linkedin:"#", github:"#", instagram:"#"}
+      { name: "Harshal Mestri", role: "EM Lead", image: "/images/team/harshal_mestri.jpg", linkedin:"#", github:"#", instagram:"#"},
+      { name: "Nakul Maheshwari", role: "EM", image: "/images/team/nakul_maheshwari.jpg", linkedin:"https://www.linkedin.com/in/nakul-maheshwari-279392240", github:"https://github.com/nakulmaheshwari1", instagram:"https://www.instagram.com/nakulmaheshwari1/"},
+      { name: "Vaidehi Turkar", role: "EM", image: "/images/team/vaidehi_turkar.jpg", linkedin:"https://www.linkedin.com/in/vaidehi-turkar-b6ab69307", github:"#", instagram:"https://www.instagram.com/vaidehi.turkar"}
     
     ]
   };
 
-  return (
-    <section id="about" className="py-20 relative" ref={ref}>
+return (
+    <section id="about" className="py-20 relative bg-gray-900" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -271,7 +271,7 @@ const About: React.FC = () => {
                     />
                     
                     {/* Social Media Overlay - FIXED VERSION */}
-                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center z-10">
                       <div className="flex space-x-4">
                         {member.linkedin && (
                           <motion.a
@@ -323,21 +323,6 @@ const About: React.FC = () => {
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h5 className="text-lg font-semibold text-white mb-1">{member.name}</h5>
                     <p className="text-blue-400 text-sm mb-2">{member.role}</p>
-                    {/* <div className="flex flex-wrap gap-1">
-                      {member.skills.slice(0, 2).map((skill) => (
-                        <span
-                          key={skill}
-                          className="bg-blue-600/80 backdrop-blur-sm text-white px-2 py-1 rounded text-xs"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                      {member.skills.length > 2 && (
-                        <span className="bg-gray-600/80 backdrop-blur-sm text-white px-2 py-1 rounded text-xs">
-                          +{member.skills.length - 2}
-                        </span>
-                      )}
-                    </div> */}
                   </div>
                 </div>
               </motion.div>
