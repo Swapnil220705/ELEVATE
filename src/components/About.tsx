@@ -73,7 +73,7 @@ const About: React.FC = () => {
   };
 
 return (
-    <section id="about" className="py-20 relative bg-gray-900" ref={ref}>
+    <section id="about" className="py-20 relative" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

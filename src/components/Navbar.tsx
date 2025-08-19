@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import logo from '../images/elevate_logo.jpg';
 
-interface NavbarProps {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
+const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'events', label: 'Events' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'join', label: 'Join Us' },
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/events', label: 'Events' },
+    { path: '/roadmaps', label: 'Roadmaps' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/join', label: 'Join Us' },
   ];
 
   useEffect(() => {
@@ -29,13 +26,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
-      setIsMobileMenuOpen(false);
-    }
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -55,36 +47,38 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
             whileHover={{ scale: 1.05 }}
             data-cursor-hover
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">E</span>
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Elevate
-            </span>
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">E</span>
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Elevate
+              </span>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <motion.button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-2 text-sm font-medium transition-colors relative ${
-                  activeSection === item.id ? 'text-blue-400' : 'text-gray-300 hover:text-white'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                data-cursor-hover
-              >
-                {item.label}
-                {activeSection === item.id && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"
-                    layoutId="activeTab"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-              </motion.button>
+              <Link key={item.path} to={item.path}>
+                <motion.div
+                  className={`px-3 py-2 text-sm font-medium transition-colors relative ${
+                    location.pathname === item.path ? 'text-blue-400' : 'text-gray-300 hover:text-white'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  data-cursor-hover
+                >
+                  {item.label}
+                  {location.pathname === item.path && (
+                    <motion.div
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"
+                      layoutId="activeTab"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                    />
+                  )}
+                </motion.div>
+              </Link>
             ))}
           </div>
 
@@ -118,17 +112,17 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
           >
             <div className="px-4 py-4 space-y-2">
               {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors ${
-                    activeSection === item.id ? 'text-blue-400' : 'text-gray-300 hover:text-white'
-                  }`}
-                  whileHover={{ x: 10 }}
-                  data-cursor-hover
-                >
-                  {item.label}
-                </motion.button>
+                <Link key={item.path} to={item.path} onClick={closeMobileMenu}>
+                  <motion.div
+                    className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors ${
+                      location.pathname === item.path ? 'text-blue-400' : 'text-gray-300 hover:text-white'
+                    }`}
+                    whileHover={{ x: 10 }}
+                    data-cursor-hover
+                  >
+                    {item.label}
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </motion.div>

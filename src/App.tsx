@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Components
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Events from './components/Events';
-import Projects from './components/Projects';
-import JoinUs from './components/JoinUs';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
 
+// Pages
+import Home from './pages/Home';
+import About from './pages/About';
+import Events from './pages/Events';
+import Roadmaps from './pages/Roadmaps';
+import Projects from './pages/Projects';
+import Join from './pages/Join';
+
 function App() {
-  const [activeSection, setActiveSection] = useState('home');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
     // Simulate loading time
@@ -53,24 +56,29 @@ function App() {
   }
 
   return (
-    <div className="bg-black text-white overflow-x-hidden">
-      <CustomCursor />
-      <ParticleBackground />
-      
-      <div className="relative z-10">
-        <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+    <Router>
+      <div className="bg-black text-white overflow-x-hidden">
+        <CustomCursor />
+        <ParticleBackground />
         
-        <main className="relative">
-          <Hero />
-          <About />
-          <Events />
-          <Projects />
-          <JoinUs />
-        </main>
-        
-        <Footer />
+        <div className="relative z-10">
+          <Navbar />
+          
+          <main className="relative">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/roadmaps" element={<Roadmaps />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/join" element={<Join />} />
+            </Routes>
+          </main>
+          
+          <Footer />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

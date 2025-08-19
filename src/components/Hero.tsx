@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -14,12 +15,6 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -108,45 +103,47 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <motion.a
-            href="#join"
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
-            whileTap={{ scale: 0.95 }}
-            data-cursor-hover
-          >
-            Join the Movement
-          </motion.a>
+          <Link to="/join">
+            <motion.button
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
+              whileTap={{ scale: 0.95 }}
+              data-cursor-hover
+            >
+              Join the Movement
+            </motion.button>
+          </Link>
           
-          <motion.a
-            href="#projects"
-            className="px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            data-cursor-hover
-            
-          >
-            Explore Projects
-          </motion.a>
+          <Link to="/projects">
+            <motion.button
+              className="px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              data-cursor-hover
+            >
+              Explore Projects
+            </motion.button>
+          </Link>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Learn More Indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          <motion.button
-            onClick={scrollToAbout}
-            className="flex flex-col items-center text-gray-400 hover:text-white transition-colors"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            data-cursor-hover
-          >
-            <span className="text-sm mb-2">Scroll Down</span>
-            <ChevronDownIcon className="w-6 h-6" />
-          </motion.button>
+          <Link to="/about">
+            <motion.button
+              className="flex flex-col items-center text-gray-400 hover:text-white transition-colors"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              data-cursor-hover
+            >
+              <span className="text-sm mb-2">Learn More</span>
+              <ChevronDownIcon className="w-6 h-6" />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
 
